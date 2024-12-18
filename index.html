@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for visiting Poliklinik Suffi 16 Jam Sungai Petani!</h1>
+        <p>Please rate your experience by selecting a star:</p>
+
+        <div id="star-rating">
+            <div class="rating-box" onclick="submitRating(5)">
+                ★ ★ ★ ★ ★ <span class="label"></span><br>
+            </div>
+            <div class="rating-box" onclick="submitRating(4)">
+                ★ ★ ★ ★ <span class="label"></span><br>
+            </div>
+            <div class="rating-box" onclick="submitRating(3)">
+                ★ ★ ★ <span class="label"></span><br>
+            </div>
+            <div class="rating-box" onclick="submitRating(2)">
+                ★ ★ <span class="label"></span><br>
+            </div>
+            <div class="rating-box" onclick="submitRating(1)">
+                ★ <span class="label"></span><br>
+            </div>
+        </div>
+
+        <div id="response-message"></div>
+    </div>
+
+    <script>
+        function submitRating(rating) {
+            const responseMessage = document.getElementById("response-message");
+
+            responseMessage.innerHTML = `Thank you for your rating of ${rating} star${rating > 1 ? "s" : ""}!`;
+
+            if (rating === 5) {
+                // Redirect to Google Review for 5-star ratings
+                window.location.href =
+                    "https://www.google.com/search?q=polikliniksuffi16jam&rlz=1C1GCEA_enMY971MY971&oq=polikliniksuffi16jam&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTISCAEQLhgNGK8BGMcBGIAEGI4FMg0IAhAAGIYDGIAEGIoFMg0IAxAAGIYDGIAEGIoFMg0IBBAAGIYDGIAEGIoFMg0IBRAAGIYDGIAEGIoF0gEJMTAxMzhqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x304ad78db63fe2ff:0x4978f6d89238f4fa,3,,,";
+            }
+        }
+    </script>
+</body>
+</html>
